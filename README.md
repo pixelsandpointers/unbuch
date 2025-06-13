@@ -27,6 +27,20 @@ Features:
 
 Find the compiled results in `publish/` directory.
 
+### Using Nix
+A Nix flake is provided exposing a dev-shell with the suitable pandoc and pandocfilters installed.
+In the project root execute `nix develop`.
+
+### Using Docker
+A Dockerfile is provided exposing a NixOS image. To build and run the Docker container run:
+```bash
+docker build -t unbuch .
+docker run -it --rm unbuch
+```
+
+The Dockerfile will automatically copy all files in the directory into the container.
+Inside the Docker container you can now use `nix develop`.
+
 ## Dependencies
 
 - `pandoc` 2.14 (**strict: must be version 2.14**)
